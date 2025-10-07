@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحاسبة الحكمية صلاة المسافر | وفق فتاوى سماحة السيد السيستاني (دام ظله)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- المتغيرات الأساسية للتصميم الفاخر المستوحى من التراث --- */
+        :root {
+            --primary-color: #004d40; /* أخضر ملكي داكن */
+            --secondary-color: #00695c; /* أخضر أفتح */
+            --accent-color: #c8a464; /* ذهبي فاخر */
+            --accent-dark-color: #b58428; /* ذهبي داكن */
+            --success-color: #004d40; /* أخضر القصر */
+            --warning-color: #b58428; /* ذهبي داكن للجمع */
+            --error-color: #8c2020; /* أحمر داكن للتمام */
+            --info-color: #01579b; /* أزرق علمي */
+            --background-color: #f1f3f4;
+            --card-background: #ffffff;
+            --text-color: #202124;
+            --light-text-color: #ffffff;
+            --border-color: #e0e0e0;
+            --header-font: 'Amiri Quran', serif;
+            --body-font: 'Cairo', sans-serif;
+            --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition-speed: 0.4s;
+        }
+
+        /* --- الإعدادات العامة والنمط الأساسي للجسم --- */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--body-font);
+            background-color: var(--background-color);
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%23d4dbe1" fill-opacity="0.4"%3E%3Cpath opacity=".5" d="M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h16v9h1v-9h9v9h1v-9h9v9h1v-9h9v9h1v-9h9v9h1v-9h9v9h1v-9h9v9h1v-9h9v9h1v-9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z"/%3E%3Cpath d="M6 5V0h1v5h94V0h1v5h-6v95H6V5zm93 1v93H7V6h92z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            color: var(--text-color);
+            margin: 0;
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* --- النافذة المنبثقة التنبيهية --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); display: flex;
+            justify-content: center; align-items: center; z-index: 1000;
+            backdrop-filter: blur(5px); opacity: 0; visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        .modal-overlay.visible { opacity: 1; visibility: visible; }
+        .modal-content {
+            background: var(--card-background); padding: 30px;
+            border-radius: var(--border-radius); width: 90%; max-width: 500px;
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-top: 5px solid var(--warning-color); transform: scale(0.9);
+            transition: transform 0.4s ease;
+        }
+        .modal-overlay.visible .modal-content { transform: scale(1); }
+        .modal-content h2 {
+            font-family: var(--header-font); color: var(--warning-color);
+            margin-top: 0; font-size: 1.8em;
+        }
+        .modal-content p { line-height: 1.8; margin-bottom: 25px; font-size: 1.1em; }
+        .modal-button {
+            background-color: var(--primary-color); color: white; border: none;
+            padding: 12px 30px; font-size: 1.1em; font-weight: 600;
+            border-radius: 8px; cursor: pointer; transition: background-color 0.3s;
+        }
+        .modal-button:hover { background-color: var(--secondary-color); }
+        
+        /* --- الحاوية الرئيسية --- */
+        .container {
+            max-width: 950px; width: 100%; background-color: var(--card-background);
+            border-radius: var(--border-radius); box-shadow: var(--box-shadow);
+            overflow: hidden; border-top: 6px solid var(--primary-color);
+        }
+
+        /* --- ترويسة الموقع --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text-color); padding: 35px 30px; text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+        }
+        header h1 { margin: 0; font-family: var(--header-font); font-size: 2.8em; font-weight: 700; }
+        header p { margin: 10px 0 0; opacity: 0.95; font-size: 1.2em; }
+
+        /* --- المحتوى الرئيسي --- */
+        main { padding: 35px; }
+
+        /* --- تصميم الاستبيان التفاعلي --- */
+        .question-step {
+            margin-bottom: 30px; padding: 25px; border: 1px solid var(--border-color);
+            border-radius: var(--border-radius); background-color: #fafbfb;
+            opacity: 1; transform: translateY(0);
+            transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+        .question-step.hidden { opacity: 0; transform: translateY(10px); display: none; }
+        .step-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 15px;
+        }
+        .step-header h3 { margin: 0; color: var(--primary-color); font-family: var(--header-font); font-size: 1.7em; }
+        .step-counter {
+            background-color: var(--accent-color); color: var(--light-text-color);
+            padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: 700;
+        }
+
+        .options { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .options.full-width { grid-template-columns: 1fr; }
+        
+        .option-card {
+            background-color: var(--card-background); border: 1px solid var(--border-color);
+            border-radius: 10px; cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            position: relative;
+        }
+        .option-card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); border-color: var(--accent-color); }
+        .option-card input[type="radio"] { position: absolute; opacity: 0; }
+        .option-card label {
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; padding: 20px; cursor: pointer;
+        }
+        .option-card.selected { border: 2px solid var(--primary-color); box-shadow: 0 0 10px rgba(0, 77, 64, 0.2); background-color: #f7f9f2; }
+        .option-icon { font-size: 2.5em; color: var(--primary-color); margin-bottom: 10px; }
+        .option-card span { font-weight: 700; font-size: 1.1em; display: block; margin-bottom: 5px; color: var(--text-color); }
+        .option-card p { margin: 0; font-size: 0.9em; color: #5f6368; line-height: 1.6; }
+
+        /* --- قسم حاسبة الأيام المتقدمة --- */
+        #calculator-section { background-color: #f7f3e9; border: 1px solid var(--accent-color); }
+        .calculator-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; }
+        .month-input { display: flex; flex-direction: column; }
+        .month-input label { font-weight: 600; margin-bottom: 8px; color: var(--primary-color); font-size: 0.95em; }
+        .month-input input {
+            padding: 10px; border: 1px solid #ccc; border-radius: 6px;
+            font-size: 1em; text-align: center; font-family: var(--body-font);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .month-input input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 8px rgba(200, 164, 100, 0.3); }
+        .calc-feedback {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+            margin-top: 20px; padding: 15px; background-color: #e8e6df;
+            border-radius: 8px; font-weight: 600; text-align: center;
+        }
+        .calc-feedback span { color: var(--primary-color); font-size: 1.2em; display: block; margin-top: 5px;}
+        
+        #intention-checkbox-container {
+            margin-top: 20px; padding: 15px; background-color: #e0f2f1;
+            border-radius: 8px; border: 1px solid #b2dfdb; display: flex; align-items: center;
+        }
+        #intention-checkbox-container label { margin: 0; cursor: pointer; margin-right: 10px; line-height: 1.7; }
+        #intention-checkbox-container input { min-width: 20px; min-height: 20px; cursor: pointer; }
+
+        /* --- زر الحساب والنتائج --- */
+        .calc-button {
+            width: 100%; background: linear-gradient(135deg, var(--accent-color), var(--accent-dark-color));
+            color: var(--light-text-color); border: none; padding: 16px 25px;
+            font-size: 1.3em; font-weight: 700; border-radius: 8px; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s; margin-top: 25px; font-family: var(--body-font);
+        }
+        .calc-button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+
+        #result-container {
+            display: none; margin-top: 35px; padding: 30px;
+            border-radius: var(--border-radius); text-align: center;
+            border-width: 4px; border-style: solid; animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        #result-container.success { border-color: var(--success-color); background-color: #e6f0ee; }
+        #result-container.warning { border-color: var(--warning-color); background-color: #fff8e1; }
+        #result-container.error { border-color: var(--error-color); background-color: #fbe9e7; }
+        #result-container.info { border-color: var(--info-color); background-color: #e3f2fd; }
+        
+        .result-title { font-size: 2.2em; font-weight: 700; margin: 0 0 15px; font-family: var(--header-font); }
+        .result-title.success { color: var(--success-color); }
+        .result-title.warning { color: var(--warning-color); }
+        .result-title.error { color: var(--error-color); }
+        .result-title.info { color: var(--info-color); }
+
+        .result-summary { font-size: 1.2em; margin: 0 0 25px; line-height: 1.8; }
+        #result-recommendation { font-weight: 700; font-size: 1.1em; background-color: rgba(0,0,0,0.05); padding: 15px; border-radius: 8px; margin-top: 20px;}
+        .result-actions { display: flex; gap: 15px; justify-content: center; margin-top: 25px; }
+        .result-actions button {
+            background-color: var(--primary-color); color: white; border: 2px solid transparent;
+            padding: 10px 25px; font-size: 1em; border-radius: 6px; cursor: pointer; transition: all 0.3s;
+        }
+        .result-actions button:hover { background-color: var(--secondary-color); }
+        .result-actions button#reset-btn { background-color: transparent; color: var(--primary-color); border-color: var(--primary-color); }
+        .result-actions button#reset-btn:hover { background-color: var(--primary-color); color: white; }
+
+        /* --- قسم الدليل الفقهي والمراجع --- */
+        .fiqh-evidence details {
+            border: 1px solid var(--border-color); border-radius: var(--border-radius);
+            overflow: hidden; background: var(--card-background); margin-top: 20px;
+        }
+        .fiqh-evidence summary {
+            padding: 18px; font-weight: 700; background-color: #f5f5f5;
+            cursor: pointer; color: var(--primary-color); font-size: 1.15em; outline: none;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .fiqh-evidence summary::after { content: '＋'; font-size: 1.4em; color: var(--accent-color); transition: transform 0.3s; }
+        .fiqh-evidence details[open] summary::after { content: '−'; transform: rotate(180deg); }
+        .fiqh-evidence div { padding: 25px; line-height: 2; background-color: #fdfdfd; }
+        .fiqh-evidence h4 {
+            color: var(--secondary-color); font-family: var(--header-font);
+            font-size: 1.4em; border-bottom: 2px solid var(--border-color); padding-bottom: 8px;
+        }
+        .fiqh-evidence blockquote {
+            background: #f9f9f9; border-right: 5px solid var(--accent-color);
+            margin: 1.5em 0; padding: 1em 15px; text-align: justify;
+        }
+        
+        /* --- تصميم جدول كثير السفر --- */
+        .fiqh-table-container {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .fiqh-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .fiqh-table th, .fiqh-table td {
+            padding: 12px 8px;
+            border: 1px solid var(--border-color);
+        }
+        .fiqh-table th {
+            background-color: #e8f5e9; /* Light green */
+            color: var(--primary-color);
+            font-weight: 700;
+            position: sticky;
+            top: -1px; /* Fix for potential clipping */
+            z-index: 2;
+        }
+        .fiqh-table td[rowspan] {
+            vertical-align: middle;
+            background-color: #f5f5f5;
+        }
+        .fiqh-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        .fiqh-table .ruling-qasr { color: var(--success-color); font-weight: bold; }
+        .fiqh-table .ruling-jam { color: var(--warning-color); font-weight: bold; }
+        .fiqh-table .ruling-tamam { color: var(--error-color); font-weight: bold; }
+
+        /* --- تذييل الصفحة --- */
+        footer {
+            text-align: center; padding: 25px; font-size: 0.9em;
+            color: #757575; background-color: #e8eaed; line-height: 1.7;
+        }
+        
+        /* --- أدوات مساعدة وتجاوبية --- */
+        .fiqh-tooltip {
+            position: absolute; top: 15px; left: 15px; background-color: var(--secondary-color);
+            color: white; width: 24px; height: 24px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; cursor: help; z-index: 10;
+        }
+        .fiqh-tooltip .tooltip-text {
+            visibility: hidden; width: 300px; background-color: #333;
+            color: #fff; text-align: justify; border-radius: 6px; padding: 10px;
+            position: absolute; z-index: 1; bottom: 125%; left: 50%;
+            margin-left: -150px; opacity: 0; transition: opacity 0.3s;
+        }
+        .fiqh-tooltip:hover .tooltip-text { visibility: visible; opacity: 1; }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            main { padding: 20px; }
+            header h1 { font-size: 2.2em; }
+            .options { grid-template-columns: 1fr; }
+            .calc-feedback { grid-template-columns: 1fr; gap: 15px; }
+            .fiqh-tooltip .tooltip-text { width: 250px; margin-left: -125px; }
+        }
+        
+        @media print {
+            body, html { padding: 0; margin: 0; background: #fff; color: #000; }
+            .container { box-shadow: none; border: none; max-width: 100%; }
+            header, footer, .question-step, .result-actions, .fiqh-evidence details:not([open]), .modal-overlay { display: none !important; }
+            #result-container { display: block !important; border: 2px solid #000; padding: 20px; box-shadow: none; margin: 20px; }
+            main { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="disclaimer-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>⚠️ تنبيه وإخلاء مسؤولية</h2>
+            <p>
+                هذه الأداة هي وسيلة مساعدة للاسترشاد والتوضيح الفقهي فقط. تم تصميم خوارزميتها بناءً على المسائل المذكورة في منهاج الصالحين، ولكنها لا تغني أبداً عن سؤال أهل العلم والخبرة.
+                <br><br>
+                التكليف الشرعي قد يعتمد على تفاصيل وخصوصيات لا يمكن لهذه الحاسبة إحصاؤها.
+                <br>
+                <b>بالضغط على "أوافق"، أنت تقر بأنك تستخدم هذه الأداة على مسؤوليتك ولغرض الإرشاد الأولي فقط.</b>
+            </p>
+            <button id="modal-agree-btn" class="modal-button">أوافق وأبدأ الاستخدام</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>الحاسبة الحكمية صلاة المسافر</h1>
+            <p>وفق فتاوى سماحة آية الله العظمى السيد علي السيستاني (دام ظله)</p>
+        </header>
+        
+        <main>
+            <form id="fiqh-questionnaire" onsubmit="return false;">
+                
+                <section id="step-distance" class="question-step">
+                    <div class="step-header">
+                        <h3>الشرط الأول: المسافة الشرعية</h3>
+                        <span class="step-counter">الخطوة 1 من 4</span>
+                    </div>
+                    <div class="options">
+                        <div class="option-card">
+                            <input type="radio" id="distance-yes" name="distance" value="yes">
+                            <label for="distance-yes">
+                                <span class="option-icon">🗺️</span>
+                                <span>يبلغ المسافة</span>
+                                <p>السفر يبلغ 44 كيلومتراً تقريباً (ذهاباً، أو ذهاباً وإياباً).</p>
+                            </label>
+                            <div class="fiqh-tooltip">? <span class="tooltip-text"><b>مسألة 884:</b> ...فتكون المسافة أربعاً وأربعين كيلو متراً تقريباً.</span></div>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" id="distance-no" name="distance" value="no">
+                            <label for="distance-no">
+                                <span class="option-icon">🚫</span>
+                                <span>لا يبلغ المسافة</span>
+                                <p>السفر أقل من 44 كيلومتراً، أو أشك في بلوغها.</p>
+                            </label>
+                            <div class="fiqh-tooltip">? <span class="tooltip-text"><b>مسألة 885:</b> إذا نقصت المسافة عن ذلك ولو يسيراً بقي على التمام، وكذا إذا شكّ في بلوغها...</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="step-purpose" class="question-step hidden">
+                    <div class="step-header">
+                        <h3>الشرط الثاني: غاية السفر</h3>
+                        <span class="step-counter">الخطوة 2 من 4</span>
+                    </div>
+                    <div class="options">
+                         <div class="option-card">
+                            <input type="radio" id="purpose-halal" name="purpose" value="halal">
+                            <label for="purpose-halal">
+                                <span class="option-icon">✅</span>
+                                <span>لغاية مباحة</span>
+                                <p>مثل العمل، الزيارة، العلاج، السياحة، أو صلة الرحم.</p>
+                            </label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" id="purpose-haram" name="purpose" value="haram">
+                            <label for="purpose-haram">
+                                <span class="option-icon">⚖️</span>
+                                <span>لغاية محرمة</span>
+                                <p>مثل السفر لفعل معصية أو للفرار من واجب.</p>
+                            </label>
+                             <div class="fiqh-tooltip">? <span class="tooltip-text"><b>الشرط الرابع:</b> أن لا يكون السفر معصية... فإذا كان حراماً لم‏ يقصّر سواء أكان حراماً بنفسه... أم لغايته...</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="step-nature" class="question-step hidden">
+                    <div class="step-header">
+                        <h3>الشرط الثالث: طبيعة السفر</h3>
+                            <span class="step-counter">الخطوة 3 من 4</span>
+                    </div>
+                    <div class="options full-width">
+                        <div class="option-card"><input type="radio" id="nature-job" name="nature" value="job"><label for="nature-job"><span class="option-icon">🚚</span><span>السفر هو مهنتي</span><p>كالسائق، الطيار، الملاح، ومن عمله التنقل المستمر بين المدن.</p></label></div>
+                        <div class="option-card"><input type="radio" id="nature-commute" name="nature" value="commute"><label for="nature-commute"><span class="option-icon">🏢</span><span>السفر مقدمة لمهنتي</span><p>أقيم في مدينة وأسافر بشكل متكرر لمقر عملي في مدينة أخرى تبعد مسافة شرعية.</p></label></div>
+                        <div class="option-card"><input type="radio" id="nature-frequent" name="nature" value="frequent"><label for="nature-frequent"><span class="option-icon">🔁</span><span>يتكرر مني السفر كثيراً لغير العمل</span><p>لزيارة، علاج، تنزه، أو رعاية الأقارب، أو الدراسة بشكل يصدق معه كثرة السفر.</p></label></div>
+                        <div class="option-card"><input type="radio" id="nature-nomad" name="nature" value="nomad"><label for="nature-nomad"><span class="option-icon">🏕️</span><span>ليس لي مقر ثابت (ممن بيته معه)</span><p>مثل بعض أهل البوادي أو السائح الذي لا وطن له ويقضي وقته في الترحال.</p></label></div>
+                        <div class="option-card"><input type="radio" id="nature-occasional" name="nature" value="occasional"><label for="nature-occasional"><span class="option-icon">✈️</span><span>سفر اعتيادي وغير متكرر</span><p>أسافر بشكل متقطع للحج أو الزيارة أو السياحة ولا ينطبق عليّ عنوان كثرة السفر.</p></label></div>
+                    </div>
+                </section>
+                
+                <section id="calculator-section" class="question-step hidden">
+                    <div class="step-header">
+                        <h3>التحليل الكمّي الدقيق: تشخيص كثرة السفر</h3>
+                        <span class="step-counter">الخطوة 4 من 4</span>
+                    </div>
+                    <p>لتشخيص هل ينطبق عليك عنوان "كثير السفر" عرفاً، يرجى إدخال عدد **الأيام** التي كنت فيها مسافراً (قاطعاً للمسافة الشرعية) في كل شهر. يمكنك ترك الأشهر التي لم تسافر فيها فارغة أو كتابة صفر.</p>
+                    <div class="calculator-form">
+                        <div class="month-input"><label for="month1">الشهر 1</label><input type="number" id="month1" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month2">الشهر 2</label><input type="number" id="month2" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month3">الشهر 3</label><input type="number" id="month3" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month4">الشهر 4</label><input type="number" id="month4" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month5">الشهر 5</label><input type="number" id="month5" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month6">الشهر 6</label><input type="number" id="month6" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month7">الشهر 7</label><input type="number" id="month7" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month8">الشهر 8</label><input type="number" id="month8" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month9">الشهر 9</label><input type="number" id="month9" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month10">الشهر 10</label><input type="number" id="month10" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month11">الشهر 11</label><input type="number" id="month11" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                        <div class="month-input"><label for="month12">الشهر 12</label><input type="number" id="month12" min="0" max="31" placeholder="0" inputmode="numeric"></div>
+                    </div>
+                    <div class="calc-feedback">
+                        <div>إجمالي الأيام<span id="total-days-feedback">0</span></div>
+                        <div>أشهر السفر<span id="active-months-feedback">0</span></div>
+                        <div>المعدل الشهري<span id="average-days-feedback">0</span></div>
+                    </div>
+                    <div id="intention-checkbox-container">
+                        <input type="checkbox" id="intention">
+                        <label for="intention">
+                            <b>شرط العزم:</b> أعزم على الاستمرار على هذا المنوال من السفر لمدة لا تقل عن ستة أشهر خلال سنة، أو ثلاثة أشهر في كل سنة لعامين قادمين أو أكثر.
+                        </label>
+                    </div>
+                    <button type="button" class="calc-button" id="calculate-btn">تحليل وإظهار الحكم الشرعي</button>
+                </section>
+
+            </form>
+
+            <div id="result-container" style="display: none;">
+                <h3 class="result-title" id="result-title"></h3>
+                <p class="result-summary" id="result-summary"></p>
+                <div id="result-recommendation"></div>
+                <div class="fiqh-evidence">
+                    <details open>
+                        <summary>المسألة الفقهية والتوضيح</summary>
+                        <div id="result-evidence"></div>
+                    </details>
+                </div>
+                <div class="result-actions">
+                    <button id="reset-btn">ابدأ تشخيصاً جديداً</button>
+                    <button id="print-btn">طباعة</button>
+                </div>
+            </div>
+            
+            <div id="reference-materials" class="fiqh-evidence" style="margin-top: 30px;">
+                <details>
+                    <summary>جدول تشخيص كثرة السفر في موارد الترديد</summary>
+                    <div>
+                        <h4>حكم كثير السفر</h4>
+                        <p>إن الضابط في كثرة السفر – التي هي من المفاهيم العرفية – هو ان يعد السفر من ديدنه وهذا المعنى يتوقف على:<br>
+                        ١- على ان يكثر عدد الاسفار او عدد الايام التي يكون مسافراً فيها ولايبعد ان يكون القدر المتيقن من العدد ٦٠ سفرة او ٩٠ يوم.<br>
+                        ٢- ان تكون الاسفار او ايام السفر في ضمن زمان معتد به ولايبعد ان يكون القدر المتيقن من ذلك ان تقع السفرات لسنتين او الايام لسنتين في ضمن ٦ اشهر من السنة او في ٣ شهر من سنة ومثلها من سنة اخرى ، وفي مدار الترديد يمكن الانتفاع بالجدول الذي نظم لغاية تشخيص النظر العرفي.</p>
+                        <div class="fiqh-table-container">
+                            <table class="fiqh-table">
+                                <thead>
+                                    <tr>
+                                        <th>المدة الإجمالية</th>
+                                        <th>عدد الايام او الاسفار (في كل شهر)</th>
+                                        <th>الحكم</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td rowspan="4">عام</td><td>١٠ فما زاد</td><td class="ruling-tamam">كثير السفر</td></tr>
+                                    <tr><td>٩ في شهر و ١١ في شهر آخر</td><td class="ruling-tamam">كثير السفر</td></tr>
+                                    <tr><td>٨ في شهر و ١٢ في شهر آخر</td><td class="ruling-tamam">كثير السفر</td></tr>
+                                    <tr><td>٧ في شهر و ١٣ في شهر آخر</td><td class="ruling-tamam">كثير السفر</td></tr>
+                                    <tr><td rowspan="5" rowspan="5">٦ أشهر من سنة واحدة<br>أو سنتين في كل منهما ٣ اشهر</td><td>٩</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr><td>٨</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr><td>٧ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr><td>٦ و ١٤ في شهر آخر</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr><td>٥ و ١٥ في شهر آخر</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr><td rowspan="2">٥ أشهر في سنة واحدة<br>أو سنتين في كل منهما ٢,٥ شهر</td><td>١٠ فما زاد</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr><td>٩ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr><td rowspan="2">٤ أشهر في سنة واحدة<br>أو سنتين في كل منهما ٢ شهر</td><td>١٢ فما زاد</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr><td>١١ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr><td rowspan="2">٣ أشهر من سنة واحدة<br>أو من سنتين في كل سنة شهراً ونصف</td><td>١٥ فما زاد</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr><td>١٤ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr><td rowspan="2">شهرين من سنة واحدة<br>أو من سنتين في كل سنة شهراً</td><td>٢٢ فما زاد</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr><td>٢١ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>عرض للمسائل الفقهية المتعلقة بالسفر (منهاج الصالحين)</summary>
+                    <div id="full-fiqh-text" style="text-align: justify; white-space: pre-wrap; max-height: 400px; overflow-y: auto; background: #fdfdfd; padding: 15px; border: 1px solid var(--border-color); border-radius: 8px;">
+                    </div>
+                </details>
+            </div>
+        </main>
+        
+        <footer>
+            <p><b>تنبيه هام:</b> هذه الأداة الإلكترونية مصممة للاسترشاد والتوضيح الفقهي فقط بناءً على المعطيات المدخلة. الحكم الشرعي الدقيق لحالة كل فرد قد يعتمد على تفاصيل وخصوصيات لا يمكن إحصاؤها في حاسبة. لذا، يجب دائماً مراجعة أهل الخبرة والموقع الرسمي لمكتب سماحة السيد السيستاني (دام ظله) للتثبت من التكليف الشرعي.
+            <br>
+            آخر تحديث للموقع والتصميم: أكتوبر 2025.</p>
+        </footer>
+    </div>
+
+    <script>
+    // ---
+    // --- شيفرة JavaScript المتقدمة لتشغيل الحاسبة الفقهية
+    // --- تم بناء هذه الشيفرة لتكون فعالة، منظمة، وسهلة القراءة.
+    // --- ملاحظة تقنية: تم استخدام JavaScript لأنها اللغة القياسية والوحيدة التي تعمل
+    // --- مباشرة في متصفح المستخدم لإنشاء تطبيق تفاعلي يعمل كملف واحد.
+    // --- لغات مثل Python أو Java تستخدم في العادة للخوادم وقواعد البيانات وليست لهذا النوع من التطبيقات.
+    // ---
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        // --- تهيئة العناصر الأساسية من واجهة المستخدم ---
+        const form = document.getElementById('fiqh-questionnaire');
+        const steps = {
+            distance: document.getElementById('step-distance'),
+            purpose: document.getElementById('step-purpose'),
+            nature: document.getElementById('step-nature'),
+            calculator: document.getElementById('calculator-section')
+        };
+        const resultContainer = document.getElementById('result-container');
+        const calculateBtn = document.getElementById('calculate-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const printBtn = document.getElementById('print-btn');
+        const monthInputs = document.querySelectorAll('.month-input input');
+        const disclaimerModal = document.getElementById('disclaimer-modal');
+        const agreeBtn = document.getElementById('modal-agree-btn');
+        
+        // --- إظهار النافذة المنبثقة للتنبيه عند تحميل الصفحة ---
+        window.onload = () => { disclaimerModal.classList.add('visible'); };
+        agreeBtn.addEventListener('click', () => { disclaimerModal.classList.remove('visible'); });
+
+        // --- وظيفة لإدارة واجهة المستخدم (إظهار/إخفاء الأقسام وإعادة تعيينها) ---
+        function manageUI(currentStepName) {
+            let startHiding = false;
+            for (const stepName of Object.keys(steps)) {
+                if (stepName === currentStepName) { startHiding = true; continue; }
+                if (startHiding) { steps[stepName].classList.add('hidden'); }
+            }
+            resultContainer.style.display = 'none';
+            // إلغاء تحديد الخيارات في الخطوات المخفية لضمان عدم وجود بيانات قديمة
+            document.querySelectorAll('.option-card.selected').forEach(card => {
+                if (getComputedStyle(card.closest('.question-step')).display === 'none') {
+                    card.classList.remove('selected');
+                    card.querySelector('input').checked = false;
+                }
+            });
+        }
+        
+        // --- إدارة الاستبيان التفاعلي عند اختيار أحد الخيارات ---
+        form.addEventListener('change', function(e) {
+            const target = e.target;
+            if (target.type !== 'radio') return;
+
+            const parentCard = target.closest('.option-card');
+            if (parentCard) {
+                parentCard.closest('.options').querySelectorAll('.option-card').forEach(card => card.classList.remove('selected'));
+                parentCard.classList.add('selected');
+            }
+            
+            const stepName = target.name;
+            const value = target.value;
+            
+            switch(stepName) {
+                case 'distance':
+                    manageUI('distance');
+                    if (value === 'no') showResult('info', 'الحكم: التمام', 'يجب عليك إتمام الصلاة لأن سفرك لا يبلغ المسافة الشرعية المعتبرة أو تشك في بلوغها.', '<h4>مسألة 885:</h4><blockquote>إذا نقصت المسافة عن ذلك ولو يسيراً بقي على التمام، وكذا إذا شكّ في بلوغها المقدار المذكور أو ظنّ بذلك.</blockquote>', 'يجب عليك أن تصلي صلاتك الرباعية (الظهر، العصر، العشاء) أربع ركعات كاملة.');
+                    else steps.purpose.classList.remove('hidden');
+                    break;
+                case 'purpose':
+                    manageUI('purpose');
+                    if (value === 'haram') showResult('error', 'الحكم: التمام', 'يجب عليك إتمام الصلاة لأن السفر لغاية محرمة بنفسها أو لما يترتب عليها من ترك واجب يوجب التمام.', '<h4>الشرط الرابع:</h4><blockquote>أن لا يكون السفر معصية... فإذا كان حراماً لم‏ يقصّر سواء أكان حراماً بنفسه... أم لغايته كالسفر لقتل النفس المحترمة...</blockquote>', 'يجب عليك أن تصلي صلاتك الرباعية أربع ركعات كاملة.');
+                    else steps.nature.classList.remove('hidden');
+                    break;
+                case 'nature':
+                    manageUI('nature');
+                    switch(value) {
+                        case 'job':
+                            showResult('info', 'الحكم: التمام في سفر العمل', 'بما أن السفر هو مهنتك (كالسائق والملاح)، فحكمك هو إتمام الصلاة في الأسفار المتعلقة بعملك. أما في أسفارك الشخصية (كالسفر للزيارة) فحكمك القصر، ما لم تكن كثير السفر فيها أيضاً.', `<h4>مسألة 912:</h4><blockquote>إذا سافر من اتّخذ العمل السفري مهنة له سفراً ليس من عمله ولا متعلّقاً به كما إذا سافر السائق للزيارة أو الحجّ وجب عليه القصر.</blockquote>`, 'صلاتك تامة في أسفار العمل، ومقصورة في الأسفار الشخصية الأخرى.');
+                            break;
+                        case 'nomad':
+                             showResult('info', 'الحكم: التمام', 'من لا يستقر في مكان معين ويُعدّ بيته معه، فحكمه إتمام الصلاة في ترحاله.', `<h4>الشرط السادس:</h4><blockquote>أن لا يكون ممّن بيته معه، بأن لا يكون له مسكن يستقرّ فيه وإلّا أتمّ صلاته ويكون بيته بمنزلة الوطن.</blockquote>`, 'يجب عليك أن تصلي صلاتك الرباعية أربع ركعات كاملة.');
+                            break;
+                        case 'occasional':
+                             showResult('success', 'الحكم: القصر', 'بما أن سفرك ليس متكرراً ولا يتعلق بمهنتك بشكل يوجب كثرة السفر، فوظيفتك هي تقصير الصلاة.', `<h4>مفهوم المخالفة للشرط الخامس:</h4><blockquote>القاعدة الأولية للمسافر الذي تحققت فيه الشروط هو القصر، ما لم يكن كثير السفر. وبما أنك لست كثير السفر، فترجع إلى الأصل وهو القصر.</blockquote>`, 'يجب عليك أن تقصّر في صلاتك الرباعية فتصليها ركعتين.');
+                            break;
+                        case 'commute':
+                        case 'frequent':
+                            steps.calculator.classList.remove('hidden');
+                            steps.calculator.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            break;
+                    }
+                    break;
+            }
+        });
+
+        // --- تحديث التغذية الراجعة الفورية عند إدخال البيانات في الحاسبة ---
+        monthInputs.forEach(input => { input.addEventListener('input', updateCalcFeedback); });
+
+        function updateCalcFeedback() {
+            let totalDays = 0, activeMonths = 0;
+            monthInputs.forEach(input => {
+                const value = parseInt(input.value) || 0;
+                totalDays += value;
+                if (value > 0) activeMonths++;
+            });
+            document.getElementById('total-days-feedback').textContent = totalDays;
+            document.getElementById('active-months-feedback').textContent = activeMonths;
+            document.getElementById('average-days-feedback').textContent = activeMonths > 0 ? (totalDays / activeMonths).toFixed(1) : '0';
+        }
+
+        // --- ربط زر الحساب بالخوارزمية الفقهية ---
+        calculateBtn.addEventListener('click', calculateAndShowResult);
+
+        // --- الخوارزمية الفقهية الأساسية ---
+        function calculateAndShowResult() {
+            // التحقق من شرط العزم أولاً
+            if (!document.getElementById('intention').checked) {
+                showResult('warning', 'الحكم: القصر (لعدم تحقق شرط العزم)', 'لم يتم تحديد "شرط العزم على الاستمرار". بدون هذا العزم، لا يصدق عليك عنوان كثير السفر حتى لو تكرر السفر منك فعلاً. وظيفتك الحالية هي القصر.', `<h4>من مقتضيات المسألة 915:</h4><blockquote>...مع العزم على الاستمرار على هذا المنوال مدّة ستّة أشهر من سنة واحدة أو مدّة ثلاثة أشهر من سنتين فما زاد...</blockquote>`, 'يجب عليك تقصير الصلاة. إذا كنت عازماً على الاستمرار، يرجى تحديد الخيار ثم إعادة الحساب.');
+                return;
+            }
+            
+            // جمع البيانات من حقول الإدخال
+            const travelingMonthsData = Array.from(monthInputs).map(input => parseInt(input.value) || 0).filter(days => days > 0);
+            
+            // التحقق من وجود بيانات
+            if (travelingMonthsData.length === 0) {
+                 showResult('info', 'لا يوجد بيانات سفر', 'يرجى إدخال عدد أيام السفر في شهر واحد على الأقل لتحديد الحكم الشرعي.', '', 'أدخل عدد أيام سفرك في الخانات المخصصة ثم اضغط زر التحليل.');
+                return;
+            }
+
+            const activeMonths = travelingMonthsData.length;
+            const averageDays = travelingMonthsData.reduce((a, b) => a + b, 0) / activeMonths;
+
+            let ruling, title, cssClass, summary, evidence, recommendation;
+
+            // تطبيق الضابطة الدقيقة من المسألة 915
+            if (averageDays >= 10) {
+                 ruling = 'Tamam';
+            } else if (averageDays >= 8) { // يشمل 8 و 9
+                 ruling = 'Jam';
+            } else { // 7 فما دون
+                 ruling = 'Qasr';
+            }
+
+            const summaryText = `بناءً على سفرك بمعدل <b>${averageDays.toFixed(1)} يوماً</b> في كل شهر من أشهر سفرك الفعلية (وعددها <b>${activeMonths} شهراً</b>)، ومع تحقق شرط العزم على الاستمرار، فإن التحليل الفقهي هو كالتالي:`;
+
+            switch(ruling) {
+                case 'Qasr':
+                    cssClass = 'success'; title = 'الحكم: القصر (لست كثير السفر)';
+                    summary = `${summaryText} لا يصدق عليك عنوان "كثير السفر".`;
+                    evidence = `<h4>مسألة 915:</h4><blockquote>وأمّا إذا كان يسافر في كلّ شهر سبع مرّات أو يكون مسافراً في سبعة أيّام منه فما دون فحكمه القصر.</blockquote><b>توضيح:</b> معدل أيام سفرك الشهري (${averageDays.toFixed(1)}) أقل من عتبة الاحتياط (8 أيام).`;
+                    recommendation = 'وظيفتك الشرعية هي أن تقصّر في صلاتك الرباعية فتصليها ركعتين.';
+                    break;
+                case 'Jam':
+                    cssClass = 'warning'; title = 'الحكم: الاحتياط الوجوبي بالجمع';
+                    summary = `${summaryText} حالتك تقع في مورد الاحتياط الوجوبي.`;
+                    evidence = `<h4>مسألة 915:</h4><blockquote>ولو كان يسافر ثماني أو تسع مرّات في الشهر الواحد أو يكون مسافراً في ثمانية أيّام منه أو تسعة فالأحوط لزوماً أن يجمع بين القصر والتمام.</blockquote><b>توضيح:</b> معدل أيام سفرك الشهري (${averageDays.toFixed(1)}) يقع بين عتبة الاحتياط (8 أيام) وعتبة كثرة السفر (10 أيام).`;
+                    recommendation = 'وظيفتك الشرعية هي الجمع بين صلاتي القصر والتمام (تأتي بكل صلاة مرة قصراً ومرة تماماً).';
+                    break;
+                case 'Tamam':
+                    cssClass = 'error'; title = 'الحكم: التمام (كثير السفر)';
+                    summary = `${summaryText} يصدق عليك عنوان "كثير السفر".`;
+                    evidence = `<h4>مسألة 915:</h4><blockquote>...فتتحقّق كثرة السفر في حقّه إذا كان... في حال السفر فيما لا يقلّ عن عشرة أيّام من الشهر... مع العزم على الاستمرار...</blockquote><b>توضيح:</b> معدل أيام سفرك الشهري (${averageDays.toFixed(1)}) يساوي أو يزيد عن عتبة كثرة السفر (10 أيام).`;
+                    recommendation = 'وظيفتك الشرعية هي أن تتم صلاتك الرباعية فتصليها أربع ركعات كاملة.';
+                    break;
+            }
+            showResult(cssClass, title, summary, evidence, recommendation);
+        }
+
+        // --- وظيفة عرض النتائج النهائية بشكل منسق ---
+        function showResult(cssClass, title, summary, evidence, recommendation) {
+            resultContainer.style.display = 'block';
+            resultContainer.className = cssClass; // إزالة الفئة القديمة وإضافة الجديدة
+            document.getElementById('result-title').className = `result-title ${cssClass}`;
+            document.getElementById('result-title').textContent = title;
+            document.getElementById('result-summary').innerHTML = summary;
+            document.getElementById('result-evidence').innerHTML = evidence;
+            document.getElementById('result-recommendation').innerHTML = recommendation;
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // --- وظيفة زر إعادة التشخيص ---
+        resetBtn.addEventListener('click', () => {
+            form.reset();
+            manageUI('');
+            updateCalcFeedback();
+            document.querySelectorAll('.option-card.selected').forEach(card => card.classList.remove('selected'));
+            steps.distance.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // --- وظيفة زر الطباعة ---
+        printBtn.addEventListener('click', () => { window.print(); });
+
+        // --- إدراج النص الفقهي الكامل بشكل ديناميكي ---
+        document.getElementById('full-fiqh-text').textContent = `
+كتاب الصلاة » الفصل الأوّل شرائط القصر في الصلاة
+
+تُقصَّر الصلاة الرباعيّة بإسقاط الركعتين الأخيرتين منها في السفر بشروط:
+
+الأوّل: قصد قطع المسافة - بمعنى إحراز قطعها ولو من غير إرادة - وهي ثمانية فراسخ امتداديّة ذهاباً أو إياباً أو ملفّقة من الثمانية ذهاباً وإياباً، سواء اتّصل ذهابه بإيابه أم انفصل عنه بمبيت ليلة واحدة أو أكثر في الطريق أو في المقصد الذي هو رأس الأربعة ما لم‏ تحصل منه الإقامة القاطعة للسفر أو غيرها من القواطع الآتية.
+
+مسألة 884: الفرسخ ثلاثة أميال، والميل أربعة آلاف ذراع بذراع اليد، وهو من المرفق إلى طرف الأصابع، فتكون المسافة أربعاً وأربعين كيلو متراً تقريباً.
+
+مسألة 885: إذا نقصت المسافة عن ذلك ولو يسيراً بقي على التمام، وكذا إذا شكّ في بلوغها المقدار المذكور أو ظنّ بذلك.
+
+مسألة 886: تثبت المسافة بالعلم وبالبيّنة الشرعيّة وبالشياع وما في حكمه ممّا يفيد الاطمئنان، ولا يثبت بخبر الواحد وإن كان عدلاً ما لم‏ يوجب الوثوق، وإذا تعارضت البيّنتان تساقطتا ووجب التمام، ولا يجب الاختبار وإن لم ‏يستلزم الحرج، وإذا شكّ غير المجتهد في مقدار المسافة شرعاً وجب عليه إمّا الرجوع إلى المجتهد والعمل على فتواه أو الاحتياط بالجمع بين القصر والتمام، وإذا اقتصر على أحدهما وانكشف مطابقته للواقع أجزأه.
+
+مسألة 887: إذا اعتقد كون ما قصده مسافة فقصّر فظهر عدمه أعاد، وأمّا إذا اعتقد عدم كونه مسافة فأتمّ ثُمَّ ظهر كونه مسافة أعاد في الوقت دون خارجه.
+
+مسألة 888: إذا شكّ في كونه مسافة أو اعتقد العدم وظهر في أثناء السير كونه مسافة قصّر وإنْ لم يكن الباقي مسافة.
+
+مسألة 889: إذا كان للبلد طريقان والأبعد منهما مسافة دون الأقرب فإن سلك الأبعد قصّر وإنْ سلك الأقرب أتمّ، ولا فرق في ذلك بين أن يكون سفره من بلده إلى بلد آخر أو من بلد آخر إلى بلده أو غيره.
+
+مسألة 890: إذا كان الذهاب خمسة فراسخ والإياب ثلاثة قصّر، وكذا في جميع صور التلفيق إذا كان الذهاب والإياب بمجموعهما ثمانية فراسخ.
+
+مسألة 891: تحتسب المسافة من الموضع الذي يعدّ الشخص بعد تجاوزه مسافراً عرفاً وهو آخر البلد غالباً، وربّما يكون آخر الحيّ أو المحلّة في بعض البلاد الكبيرة جدّاً، وآخر المسافة لمن يسافر إلى بلد غير وطنه هو مقصده في ذلك البلد، لا أوّله.
+
+مسألة 892: لا يعتبر توالي السير على النحو المتعارف، بل يكفي قصد السفر في المسافة المذكورة ولو في أيّام كثيرة، نعم لو كان يقطع في كلّ يوم شيئاً يسيراً جدّاً للتنزّه أو نحوه فالأحوط لزوماً الجمع بين القصر والتمام.
+
+مسألة 893: يجب القصر في المسافة المستديرة إذا كان مجموع الذهاب والإياب ثمانية فراسخ، ولا فرق بين ما إذا كانت الدائرة في أحد جوانب البلد أو كانت مستديرة على البلد.
+
+مسألة 894: لا بُدَّ من تحقّق القصد إلى المسافة في أوّل السير فإذا قصد ما دون المسافة وبعد بلوغه تجدّد قصده إلى ما دونها أيضاً، وهكذا وجب التمام وإن قطع مسافات، نعم إذا قصد ما دون المسافة عازماً على الرجوع وكان المجموع يبلغ ثمانية فراسخ لزمه التقصير، فطالب الضالّة أو الغريم أو العمل ونحوهم يتمّون، إلّا إذا حصل لهم في الأثناء قصد ثمانية فراسخ امتداديّة أو ملفّقة من الذهاب والإياب.
+
+مسألة 895: إذا خرج إلى ما دون أربعة فراسخ ينتظر رفقة إن تيسّروا سافر معهم وإلّا رجع أتمّ، وكذا إذا كان سفره مشروطاً بأمر آخر غير معلوم الحصول، نعم إذا كان مطمئنّاً بتيسّر الرفقة أو بحصول ذلك الأمر قصّر .
+
+مسألة 896: لا يعتبر في قصد السفر أن يكون مستقلّاً، فإذا كان تابعاً لغيره كالزوجة والخادم والأسير وجب التقصير، إذا كان قاصداً للمسافة تبعاً لقصد المتبوع، وإذا شكّ في قصد المتبوع بقي على التمام، والأحوط استحباباً الاستخبار من المتبوع ولكن لا يجب عليه الإخبار، وإذا علم في الأثناء قصد المتبوع، فإن كان الباقي مسافة ولو ملفّقة قصّر، وإلّا بقي على التمام.
+
+مسألة 897: إذا كان التابع عازماً على مفارقة المتبوع قبل بلوغ المسافة أو متردّداً في ذلك بقي على التمام، وكذا إذا كان عازماً على المفارقة على تقدير حصول أمر محتمل الحصول - سواء أكان له دخل في ارتفاع المقتضي للسفر أو شرطه مثل الطلاق، أم كان مانعاً عن السفر مع تحقّق المقتضي له وشرطه - فإذا قصد المسافة واحتمل احتمالاً عقلائيّاً لا يطمئنّ بخلافه حدوث مانع عن سفره أتمّ صلاته، وإن انكشف بعد ذلك عدم المانع.
+
+مسألة 898: يجب القصر في السفر غير الاختياريّ كما إذا أُلقي في قطار أو سفينة بقصد إيصاله إلى ما يبلغ المسافة وهو يعلم ببلوغه المسافة، أمّا إذا كان نائماً أو مغمى عليه مثلاً وسافر به شخص من غير سبق التفات فلا تقصير عليه.
+
+الثاني: استمرار القصد ولو حكماً، فلا ينافيه إلّا العدول أو التردّد، فإذا عدل قبل بلوغ الأربعة إلى قصد الرجوع أو تردّد في ذلك وجب التمام، والأحوط لزوماً إعادة ما صلّاه قصراً إذا كان العدول قبل خروج الوقت، وقضاؤه إن كان بعد خروجه، والإمساك في شهر رمضان في بقيّة النهار وإن كان قد أفطر قبل ذلك، وإذا كان العدول أو التردّد بعد بلوغ الأربعة وكان عازماً على العود قبل إقامة العشرة بقي على القصر واستمرّ على الإفطار .
+
+مسألة 899: يكفي في استمرار القصد بقاء قصد نوع السفر وإن عدل عن الشخص الخاصّ، كما إذا قصد السفر إلى مكان وفي الأثناء عدل إلى غيره فإنّه يقصّر إذا كان ما مضى مع ما بقي إليه بمقدار المسافة، وكذا إذا كان من أوّل الأمر قاصداً السفر إلى أحد البلدين من دون تعيين أحدهما، فإنّه يقصّر إذا كان السفر إلى كلٍّ منهما يبلغ المسافة.
+
+مسألة 900: إذا قصد المسافة ثمّ تردّد في الأثناء ثُمَّ عاد إلى الجزم فإن كان ما بقي مسافة ولو ملفّقة قصّر في صلاته، وكذا إذا لم يكن الباقي مسافة ولكنّه يبلغها إذا ضمّ إليه مسيره الأوّل قبل التردّد - بعد إسقاط ما تخلّل بينهما ممّا قطعه حال التردّد - وإن كان الأحوط استحباباً في هذه الصورة أن يجمع بين القصر والإتمام.
+
+الثالث: أن يحرز عدم تحقّق شيء من قواطع السفر في أثناء المسافة وهي كما سيأتي تفصيلها: المرور بالوطن والنزول فيه، وقصد الإقامة عشرة أيّام، والتوقّف ثلاثين يوماً في محلّ متردّداً، فلو خرج قاصداً طيّ المسافة الامتداديّة أو التلفيقيّة وعلم أنّه يمرّ بوطنه وينزل فيه أثناء المسافة، أو أنّه يقيم أثنائها عشرة أيّام لم‏ يشرع له التقصير من الأوّل، وكذلك الحال فيما إذا خرج قاصداً السفر المستمرّ ولكن احتمل احتمالاً لا يطمئنّ بخلافه عروض ما يوجب تبدّل قصده على نحو يلزمه أن ينوي الإقامة عشرة، أو المرور بالوطن والنزول فيه أو البقاء أثناءه في محلّ ثلاثين يوماً متردّداً فإنّه في جميع ذلك يتمّ صلاته من أوّل سفره وإن لم ‏يعرض ما احتمل عروضه، وإذا اطمأنّ من نفسه أنّه لا يتحقّق شيء من ذلك قصّر صلاته وإن احتمل تحقّقه ضعيفاً كواحد في المائة.
+
+الرابع: أن لا يكون السفر معصية ولا يكون للصيد لهواً، فإذا كان حراماً لم‏ يقصّر سواء أكان حراماً بنفسه كسفر الزوجة بدون إذن الزوج لغير أداء الواجب، أم لغايته كالسفر لقتل النفس المحترمة أو للسرقة أو للزناء أو لإعانة الظالم في ظلمه ونحو ذلك، ومثله ما إذا كانت الغاية من السفر ترك واجب، كما إذا كان مديوناً وسافر فراراً من أداء الدين مع وجوبه عليه فإنّه يجب فيه التمام، وأمّا إذا كان السفر ممّا يتّفق في أثنائه وقوع الحرام أو ترك الواجب - كالغيبة وشرب الخمر وترك الصلاة ونحو ذلك - من دون أن يكون الحرام أو ترك الواجب غاية للسفر فيجب فيه القصر .
+
+مسألة 901: إذا سافر على السيّارة المغصوبة مثلاً بقصد الفرار بها عن المالك أتمّ صلاته، وكذا إذا سافر في الأرض المغصوبة.
+
+مسألة 902: إباحة السفر شرط في الابتداء والاستدامة، فإذا كان ابتداء سفره مباحاً وفي الأثناء قصد المعصية أتمّ حينئذٍ، وأمّا ما صلّاه قصراً سابقاً فلا تجب إعادته، وإذا رجع إلى قصد المباح قصّر في صلاته وإن لم يكن الباقي مسافة.
+
+مسألة 903: إذا كان ابتداء سفره معصية فعدل إلى المباح قصّر في صلاته سواء أكان الباقي مسافة أم لا.
+
+مسألة 904: الراجع من سفر المعصية يقصّر إذا لم ‏يكن الرجوع بنفسه من سفر المعصية، ولا فرق في هذا بين من تاب عن معصيته ومن لم‏ يتب، كما لا فرق بين كون الرجوع بمقدار المسافة أو لا.
+
+مسألة 905: إذا سافر لغاية ملفّقة من أمر مباح وآخر حرام أتمّ صلاته، إلّا إذا كان الحرام تابعاً غير صالح للاستقلال في تحقّق السفر فإنّه يقصّر عندئذٍ.
+
+مسألة 906: إذا سافر للصيد لهواً - كما يستعمله أبناء الدنيا - أتمّ الصلاة في ذهابه، وقصّر في إيابه إذا كان وحده مسافة ولم ‏يكن كالذهاب للصيد لهواً، أمّا إذا كان الصيد لقوته وقوت عياله أو للتجارة فحكمه التقصير، ولا فرق في ذلك بين صيد البرّ والبحر، والأحوط لزوماً في غير السفر للصيد اللهويّ ـــ من السفر الذي يعدّ باطلاً ولو بلحاظ المقاصد العقلائيّة ـــ الجمع بين القصر والتمام.
+
+مسألة 907: التابع للجائر في سفره إذا كان مكرهاً على ذلك أو كان بقصد غرض صحيح كدفع مظلمة عن نفسه أو عن غيره يقصّر، وإلّا يتمّ إذا كان على وجه يعدّ من أتباعه وأعوانه في جوره، فإذا كان سفر الجائر مباحاً فالتابع يتمّ والمتبوع يقصّر .
+
+مسألة 908: إذا شكّ في كون السفر معصية أو لا مع كون الشبهة موضوعيّة فمقتضى الأصل هو الإباحة فيقصّر، إلّا إذا كانت الحالة السابقة هي الحرمة أو كان هناك أصل موضوعيّ يحرز به الحرمة فلا يقصّر .
+
+مسألة 909: إذا كان السفر في الابتداء معصية فقصد الصوم ثُمَّ عدل في الأثناء إلى الطاعة، فإن كان العدول قبل الزوال وجب الإفطار، وإن كان العدول بعد الزوال وكان في شهر رمضان فالأحوط وجوباً أن يتمّه ثُمَّ يقضيه، ولو انعكس الأمر بأن كان سفره طاعة في الابتداء وعدل إلى المعصية في الأثناء فإن لم‏ يأتِ بالمفطر فالأحوط وجوباً أن يصوم ثُمَّ يقضيه سواء أكان ذلك قبل الزوال أم بعده، ولو كان ذلك بعد فعل المفطر فالأحوط وجوباً أن يمسك في بقيّة النهار تأدّباً إن كان في شهر رمضان، وعليه القضاء.
+
+الخامس: أن لا يكون كثير السفر إلى حدّ المسافة وإلّا أتمّ صلاته، وهذا في ثلاثة موارد:
+1. من يتّخذ العمل السفريّ مهنة له، كالسائق والملّاح ومساعديهما.
+2. من يكون السفر مقدّمة لمهنته، كمن يقيم في مكان ويسافر إلى مكان آخر في كلّ يوم مثلاً لممارسة مهنته من طبابة أو تجارة أو تدريس أو غير ذلك.
+3. من يتكرّر منه السفر لغرض آخر، كمن يسافر يوميّاً للتنزّه أو للعلاج أو للزيارة ونحو ذلك.
+فهؤلاء جميعاً يتمّون الصلاة في سفرهم مع صدق عنوان (كثير السفر ) عليهم عرفاً، ولكن المناط في المورد الأوّل بالكثرة التقديريّة، فالسائق ونحوه يتمّ الصلاة وإن لم ‏يكثر السفر منه بعدُ إذا كان عازماً على ذلك - كما سيجيء - وأمّا في الموردين الثاني والثالث فتعتبر الكثرة الفعليّة وسيأتي بيان ضابطها.
+
+مسألة 910: إذا اختصّ عمله بالسفر إلى ما دون المسافة قصّر إن اتّفق له السفر إلى المسافة ولو كان في عمله، وأمّا إذا كان عمله السفر إلى مسافة معيّنة كالسائق من النجف إلى كربلاء واتّفق له تأجير سيّارته إلى غيرها فيبقى على التمام.
+
+مسألة 911: لا يعتبر في وجوب التمام على من اتّخذ العمل السفريّ مهنة له تكرّر السفر منه ثلاث مرّات، بل متى ما صدق عليه عنوان السائق أو نحوه يجب عليه التمام، نعم إذا توقّف صدقه على تكرار السفر يجب التقصير قبله.
+
+مسألة 912: إذا سافر من اتّخذ العمل السفري مهنة له سفراً ليس من عمله ولا متعلّقاً به كما إذا سافر السائق للزيارة أو الحجّ وجب عليه القصر، ومثله ما إذا اصطدمت سيّارته مثلاً فتركها عند من يصلحها ورجع إلى أهله فإنّه يقصّر في سفر الرجوع، نعم إذا لم ‏يتهيّأ له تأجير سيّارته في رجوعه فرجع إلى أهله بسيّارته خالية من الركّاب مثلاً كان حكمه التمام في رجوعه أيضاً، فالتمام يختصّ بالسفر الذي هو عمله أو متعلّق بعمله، هذا مع عدم تحقّق الكثرة الفعليّة في حقّه - وسيأتي ضابطها - وإلّا فحكمه التمام ولو في السفر الذي لا يتعلّق بعمله.
+
+مسألة 913: إذا كان كثير السفر في شهور معيّنة من السنة أو فصل معيّن منها، كالذي يؤجر سيّارته بين مكّة وجدّة في شهور الحجّ فقط أو يجلب الخضر من الريف إلى المدينة في فصل الصيف فقط أتمّ الصلاة في سفره في المدّة المذكورة، أمّا في غيرها من الشهور والفصول فيقصّر إذا اتّفق له السفر .
+
+مسألة 914: الحملداريّة الذين يسافرون إلى مكّة في أيّام الحجّ في كلّ سنة ويقيمون في بلادهم بقيّة أيّام السنة يختلف حالهم في جريان حكم من عمله السفر عليهم وعدمه، فإنّه إذا كان سفرهم يستغرق ثلاثة أشهر فما زاد كان حكمهم التمام، وإذا كان لا يستغرق أزيد من شهرين كان حكمهم القصر، وإن كان فيما بين ذلك فالأحوط لزوماً لهم الجمع بين القصر والتمام.
+
+مسألة 915: يتوقّف صدق عنوان (السائق) مثلاً على العزم على مزاولة مهنة السياقة مرّة بعد أُخرى على نحو لا يكون له فترة غير معتادة لمن يتّخذ تلك المهنة عملاً له، وتختلف الفترة طولاً وقصراً بحسب اختلاف الموارد...
+...وأمّا غيره ممّن يتكرّر منه السفر خارجاً لكونه مقدّمة لمهنته أو لغرض آخر فتتحقّق كثرة السفر في حقّه إذا كان يسافر في كلّ شهر ما لا يقلّ عن عشر مرّات من عشرة أيّام منه، أو يكون في حال السفر فيما لا يقلّ عن عشرة أيّام من الشهر ولو بسفرتين أو ثلاثة، مع العزم على الاستمرار على هذا المنوال مدّة ستّة أشهر من سنة واحدة أو مدّة ثلاثة أشهر من سنتين فما زاد، وأمّا إذا كان يسافر في كلّ شهر سبع مرّات أو يكون مسافراً في سبعة أيّام منه فما دون فحكمه القصر، ولو كان يسافر ثماني أو تسع مرّات في الشهر الواحد أو يكون مسافراً في ثمانية أيّام منه أو تسعة فالأحوط لزوماً أن يجمع بين القصر والتمام.
+
+مسألة 916: إذا كان يسافر في بعض الشهور الستّة في سنة واحدة أو الشهور الثلاثة في أكثر من سنة ثماني مرّات وفي البعض الآخر اثني عشرة مرّة مثلاً جرى عليه حكم كثير السفر إذا كان المجموع يبلغ الستّين سفرة في الفرض الأوّل أو الثلاثين سفرة في الفرض الثاني.
+
+مسألة 917: إذا أقام كثير السفر في بلده عدّة أيّام لم‏ ينقطع عنه حكم كثرة السفر ولو بلغت العشرة فيتمّ الصلاة بعدها حتّى في سفره الأوّل...
+
+السادس: أن لا يكون ممّن بيته معه...
+
+السابع: أن يصل إلى حدّ الترخّص...
+`;
+    });
+    </script>
+</body>
+</html>
