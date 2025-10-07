@@ -241,10 +241,6 @@
             top: -1px; /* Fix for potential clipping */
             z-index: 2;
         }
-        .fiqh-table td[rowspan] {
-            vertical-align: middle;
-            background-color: #f5f5f5;
-        }
         .fiqh-table tr:nth-child(even) {
             background-color: #fafafa;
         }
@@ -272,6 +268,60 @@
             margin-left: -150px; opacity: 0; transition: opacity 0.3s;
         }
         .fiqh-tooltip:hover .tooltip-text { visibility: visible; opacity: 1; }
+
+        /* --- تصميم الجدول المتجاوب للشاشات الصغيرة --- */
+        @media (max-width: 768px) {
+            .fiqh-table-container {
+                max-height: none;
+                overflow-y: visible;
+                border: none;
+            }
+            .fiqh-table {
+                border: none;
+            }
+            .fiqh-table thead {
+                display: none; /* إخفاء رأس الجدول الأصلي */
+            }
+            .fiqh-table tr {
+                display: block;
+                margin-bottom: 1.5rem;
+                border: 1px solid var(--border-color);
+                border-radius: var(--border-radius);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+                padding: 0;
+                background-color: var(--card-background) !important; /* لضمان عدم تداخل الألوان */
+            }
+            .fiqh-table td {
+                display: block;
+                width: auto;
+                border: none;
+                border-bottom: 1px solid #eee;
+                padding: 12px 15px;
+                text-align: right;
+            }
+            .fiqh-table tr td:last-child {
+                border-bottom: none;
+            }
+            /* جعل الخلية الأولى كعنوان للبطاقة */
+            .fiqh-table td:first-child {
+                background-color: #f8f9fa;
+                font-weight: 700;
+                font-size: 1.1em;
+                color: var(--primary-color);
+                border-bottom: 1px solid var(--border-color);
+                border-radius: var(--border-radius) var(--border-radius) 0 0;
+            }
+            /* استخدام خاصية data-label لإظهار عنوان الحقل فوق القيمة */
+            .fiqh-table td:not(:first-child)::before {
+                content: attr(data-label);
+                display: block;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: var(--secondary-color);
+                margin-bottom: 5px;
+            }
+        }
+
 
         @media (max-width: 768px) {
             body { padding: 10px; }
@@ -453,23 +503,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td rowspan="4">عام</td><td>١٠ فما زاد</td><td class="ruling-tamam">كثير السفر</td></tr>
-                                    <tr><td>٩ في شهر و ١١ في شهر آخر</td><td class="ruling-tamam">كثير السفر</td></tr>
-                                    <tr><td>٨ في شهر و ١٢ في شهر آخر</td><td class="ruling-tamam">كثير السفر</td></tr>
-                                    <tr><td>٧ في شهر و ١٣ في شهر آخر</td><td class="ruling-tamam">كثير السفر</td></tr>
-                                    <tr><td rowspan="5" rowspan="5">٦ أشهر من سنة واحدة<br>أو سنتين في كل منهما ٣ اشهر</td><td>٩</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
-                                    <tr><td>٨</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
-                                    <tr><td>٧ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
-                                    <tr><td>٦ و ١٤ في شهر آخر</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
-                                    <tr><td>٥ و ١٥ في شهر آخر</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
-                                    <tr><td rowspan="2">٥ أشهر في سنة واحدة<br>أو سنتين في كل منهما ٢,٥ شهر</td><td>١٠ فما زاد</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
-                                    <tr><td>٩ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
-                                    <tr><td rowspan="2">٤ أشهر في سنة واحدة<br>أو سنتين في كل منهما ٢ شهر</td><td>١٢ فما زاد</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
-                                    <tr><td>١١ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
-                                    <tr><td rowspan="2">٣ أشهر من سنة واحدة<br>أو من سنتين في كل سنة شهراً ونصف</td><td>١٥ فما زاد</td><td class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
-                                    <tr><td>١٤ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
-                                    <tr><td rowspan="2">شهرين من سنة واحدة<br>أو من سنتين في كل سنة شهراً</td><td>٢٢ فما زاد</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
-                                    <tr><td>٢١ فما دون</td><td class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">عام</td><td data-label="عدد الايام او الاسفار (في كل شهر)">١٠ فما زاد</td><td data-label="الحكم" class="ruling-tamam">كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">عام</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٩ في شهر و ١١ في شهر آخر</td><td data-label="الحكم" class="ruling-tamam">كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">عام</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٨ في شهر و ١٢ في شهر آخر</td><td data-label="الحكم" class="ruling-tamam">كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">عام</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٧ في شهر و ١٣ في شهر آخر</td><td data-label="الحكم" class="ruling-tamam">كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٦ أشهر من سنة واحدة<br>أو سنتين في كل منهما ٣ اشهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٩</td><td data-label="الحكم" class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٦ أشهر من سنة واحدة<br>أو سنتين في كل منهما ٣ اشهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٨</td><td data-label="الحكم" class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٦ أشهر من سنة واحدة<br>أو سنتين في كل منهما ٣ اشهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٧ فما دون</td><td data-label="الحكم" class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٦ أشهر من سنة واحدة<br>أو سنتين في كل منهما ٣ اشهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٦ و ١٤ في شهر آخر</td><td data-label="الحكم" class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٦ أشهر من سنة واحدة<br>أو سنتين في كل منهما ٣ اشهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٥ و ١٥ في شهر آخر</td><td data-label="الحكم" class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٥ أشهر في سنة واحدة<br>أو سنتين في كل منهما ٢,٥ شهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">١٠ فما زاد</td><td data-label="الحكم" class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٥ أشهر في سنة واحدة<br>أو سنتين في كل منهما ٢,٥ شهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٩ فما دون</td><td data-label="الحكم" class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٤ أشهر في سنة واحدة<br>أو سنتين في كل منهما ٢ شهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">١٢ فما زاد</td><td data-label="الحكم" class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٤ أشهر في سنة واحدة<br>أو سنتين في كل منهما ٢ شهر</td><td data-label="عدد الايام او الاسفار (في كل شهر)">١١ فما دون</td><td data-label="الحكم" class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٣ أشهر من سنة واحدة<br>أو من سنتين في كل سنة شهراً ونصف</td><td data-label="عدد الايام او الاسفار (في كل شهر)">١٥ فما زاد</td><td data-label="الحكم" class="ruling-jam">الاحوط وجوبا الجمع</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">٣ أشهر من سنة واحدة<br>أو من سنتين في كل سنة شهراً ونصف</td><td data-label="عدد الايام او الاسفار (في كل شهر)">١٤ فما دون</td><td data-label="الحكم" class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">شهرين من سنة واحدة<br>أو من سنتين في كل سنة شهراً</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٢٢ فما زاد</td><td data-label="الحكم" class="ruling-qasr">ليس كثير السفر</td></tr>
+                                    <tr ><td data-label="المدة الإجمالية">شهرين من سنة واحدة<br>أو من سنتين في كل سنة شهراً</td><td data-label="عدد الايام او الاسفار (في كل شهر)">٢١ فما دون</td><td data-label="الحكم" class="ruling-qasr">ليس كثير السفر</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -647,7 +697,7 @@
                 case 'Jam':
                     cssClass = 'warning'; title = 'الحكم: الاحتياط الوجوبي بالجمع';
                     summary = `${summaryText} حالتك تقع في مورد الاحتياط الوجوبي.`;
-                    evidence = `<h4>مسألة 915:</h4><blockquote>ولو كان يسافر ثماني أو تسع مرّات في الشهر الواحد أو يكون مسافراً في ثمانية أيّام منه أو تسعة فالأحوط لزوماً أن يجمع بين القصر والتمام.</blockquote><b>توضيح:</b> معدل أيام سفرك الشهري (${averageDays.toFixed(1)}) يقع بين عتبة الاحتياط (8 أيام) وعتبة كثرة السفر (10 أيام).`;
+                    evidence = `<h4>مسألة 915:</h4><blockquote> ولو كان يسافر ثماني أو تسع مرّات في الشهر الواحد أو يكون مسافراً في ثمانية أيّام منه أو تسعة فالأحوط لزوماً أن يجمع بين القصر والتمام.</blockquote><b>توضيح:</b> معدل أيام سفرك الشهري (${averageDays.toFixed(1)}) يقع بين عتبة الاحتياط (8 أيام) وعتبة كثرة السفر (10 أيام).`;
                     recommendation = 'وظيفتك الشرعية هي الجمع بين صلاتي القصر والتمام (تأتي بكل صلاة مرة قصراً ومرة تماماً).';
                     break;
                 case 'Tamam':
